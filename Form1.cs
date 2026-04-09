@@ -25,10 +25,11 @@ namespace BurgerKiosk
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked) {
+            if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
+            {
                 lblTotalCost.ForeColor = Color.Red;
                 lblTotalCost.Text = "메뉴를 선택하세요";
-                return; 
+                return;
             }
 
             int totalCost = 0;
@@ -114,7 +115,7 @@ namespace BurgerKiosk
                 }
                 lblTotalCost.Text = "총금액: " + totalCost.ToString("N0") + "원";
             }
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -134,6 +135,63 @@ namespace BurgerKiosk
         private void lblTotalCost_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void chkSauce_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoBulgogiBurger_CheckedChanged(object sender, EventArgs e)
+        {
+            // 나중에 코드를 채워넣어도 되고, 비워두셔도 됩니다.
+        }
+
+        // 84번줄 외에도 다른 줄에서 비슷한 오류(rdoChickenBurger 등)가 난다면 아래도 추가하세요.
+        private void rdoChickenBurger_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void chkPotato_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btnOrder_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                // 이 키 입력을 여기서 끝내고 버튼으로 전달하지 않음
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void button2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                // 이 키 입력을 여기서 끝내고 버튼으로 전달하지 않음
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void btnOrder_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                e.Handled = true;
+                // 스페이스바가 눌렸다는 신호를 여기서 증발시킵니다.
+            }
+        }
+
+        private void button2_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Space)
+            {
+                e.Handled = true;
+                // 스페이스바가 눌렸다는 신호를 여기서 증발시킵니다.
+            }
         }
     }
 }
