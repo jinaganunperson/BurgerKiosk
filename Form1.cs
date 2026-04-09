@@ -2,6 +2,7 @@ namespace BurgerKiosk
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -193,5 +194,61 @@ namespace BurgerKiosk
                 // 스페이스바가 눌렸다는 신호를 여기서 증발시킵니다.
             }
         }
+        private void UpdateOrderList()
+        {
+            // 1. 기존 내역과 합계 초기화
+            lstOrder.Items.Clear();
+            int currentTotal = 0;
+
+            // 2. 버거 선택 확인 및 가격 추가
+            if (rdoHamBurger.Checked)
+            {
+                currentTotal += 5000;
+                lstOrder.Items.Add("햄버거 : 5,000원");
+            }
+            else if (rdoBulgogiBurger.Checked)
+            {
+                currentTotal += 4000;
+                lstOrder.Items.Add("불고기버거 : 4,000원");
+            }
+            else if (rdoChickenBurger.Checked)
+            {
+                currentTotal += 3000;
+                lstOrder.Items.Add("치킨버거 : 3,000원");
+            }
+
+            // 메뉴가 선택된 경우에만 옵션 계산
+            if (currentTotal > 0)
+            {
+                lblTotalCost.ForeColor = Color.Blue; // 다시 파란색으로
+
+                if (chkPotato.Checked)
+                {
+                    currentTotal += 3500;
+                    lstOrder.Items.Add("감자튀김 : 3,500원");
+                }
+                if (chkCola.Checked)
+                {
+                    currentTotal += 2500;
+                    lstOrder.Items.Add("콜라 추가 : 2,500원");
+                }
+                if (chkCheese.Checked)
+                {
+                    currentTotal += 1500;
+                    lstOrder.Items.Add("치즈 추가 : 1,500원");
+                }
+                if (chkSauce.Checked)
+                {
+                    currentTotal += 500;
+                    lstOrder.Items.Add("소스 : 500원");
+                }
+                lblTotalCost.Text = "총금액: " + currentTotal.ToString("N0") + "원";
+            }
+            else
+            {
+                lblTotalCost.Text = "메뉴를 선택하세요";
+            }
+        }
     }
+    
 }
