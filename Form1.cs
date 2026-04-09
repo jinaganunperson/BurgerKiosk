@@ -25,10 +25,17 @@ namespace BurgerKiosk
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked) {
+                lblTotalCost.ForeColor = Color.Red;
+                lblTotalCost.Text = "메뉴를 선택하세요";
+                return; 
+            }
+
             int totalCost = 0;
 
             if (rdoHamBurger.Checked)
             {
+                lblTotalCost.ForeColor = Color.Blue;
                 totalCost += 5000;
                 lstOrder.Items.Add("햄버거 : 5,000원");
                 if (chkPotato.Checked)
@@ -55,6 +62,7 @@ namespace BurgerKiosk
             }
             else if (rdoBulgogiBurger.Checked)
             {
+                lblTotalCost.ForeColor = Color.Blue;
                 totalCost += 4000;
                 lstOrder.Items.Add("불고기버거 : 4,000원");
                 if (chkPotato.Checked)
@@ -81,6 +89,7 @@ namespace BurgerKiosk
             }
             else if (rdoChickenBurger.Checked)
             {
+                lblTotalCost.ForeColor = Color.Blue;
                 totalCost += 3000;
                 lstOrder.Items.Add("치킨버거 : 3,000원");
                 if (chkPotato.Checked)
@@ -118,6 +127,7 @@ namespace BurgerKiosk
             chkCheese.Checked = false;
             chkSauce.Checked = false;
             lstOrder.Items.Clear(); lblTotalCost.Text = "";
+            lblTotalCost.ForeColor = Color.Blue;
             lblTotalCost.Text = "총 합계 : 000원";
         }
 
