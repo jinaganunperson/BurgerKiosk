@@ -10,17 +10,17 @@ namespace BurgerKiosk
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            UpdateOrderList();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-
+            UpdateOrderList();
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-
+            UpdateOrderList();
         }
         int totalCost = 0;
 
@@ -39,83 +39,84 @@ namespace BurgerKiosk
             {
                 lblTotalCost.ForeColor = Color.Blue;
                 totalCost += 5000;
-                lstOrder.Items.Add("햄버거 : 5,000원");
+
                 if (chkPotato.Checked)
                 {
                     totalCost += 3500;
-                    lstOrder.Items.Add("감자튀김 : 3,500원");
+
                 }
                 if (chkCola.Checked)
                 {
                     totalCost += 2500;
-                    lstOrder.Items.Add("콜라 추가 : 2,500원");
+
                 }
                 if (chkCheese.Checked)
                 {
                     totalCost += 1500;
-                    lstOrder.Items.Add("치즈 추가 : 1,500원");
+
                 }
                 if (chkSauce.Checked)
                 {
                     totalCost += 500;
-                    lstOrder.Items.Add("소스 : 500원");
+
                 }
-                lblTotalCost.Text = "총금액: " + totalCost.ToString("N0") + "원";
+                
             }
             else if (rdoBulgogiBurger.Checked)
             {
                 lblTotalCost.ForeColor = Color.Blue;
                 totalCost += 4000;
-                lstOrder.Items.Add("불고기버거 : 4,000원");
+
                 if (chkPotato.Checked)
                 {
                     totalCost += 3500;
-                    lstOrder.Items.Add("감자튀김 : 3,500원");
+
                 }
                 if (chkCola.Checked)
                 {
                     totalCost += 2500;
-                    lstOrder.Items.Add("콜라 추가 : 2,500원");
+
                 }
                 if (chkCheese.Checked)
                 {
                     totalCost += 1500;
-                    lstOrder.Items.Add("치즈 추가 : 1,500원");
+
                 }
                 if (chkSauce.Checked)
                 {
                     totalCost += 500;
-                    lstOrder.Items.Add("소스 : 500원");
+
                 }
-                lblTotalCost.Text = "총금액: " + totalCost.ToString("N0") + "원";
+                
             }
             else if (rdoChickenBurger.Checked)
             {
                 lblTotalCost.ForeColor = Color.Blue;
                 totalCost += 3000;
-                lstOrder.Items.Add("치킨버거 : 3,000원");
+
                 if (chkPotato.Checked)
                 {
                     totalCost += 3500;
-                    lstOrder.Items.Add("감자튀김 : 3,500원");
+
                 }
                 if (chkCola.Checked)
                 {
                     totalCost += 2500;
-                    lstOrder.Items.Add("콜라 추가 : 2,500원");
+
                 }
                 if (chkCheese.Checked)
                 {
                     totalCost += 1500;
-                    lstOrder.Items.Add("치즈 추가 : 1,500원");
+
                 }
                 if (chkSauce.Checked)
                 {
                     totalCost += 500;
-                    lstOrder.Items.Add("소스 : 500원");
+
                 }
-                lblTotalCost.Text = "총금액: " + totalCost.ToString("N0") + "원";
+                
             }
+            lblTotalCost.Text = "총금액: " + totalCost.ToString("N0") + "원";
 
         }
 
@@ -140,21 +141,23 @@ namespace BurgerKiosk
 
         private void chkSauce_CheckedChanged(object sender, EventArgs e)
         {
-
+            UpdateOrderList();
         }
 
         private void rdoBulgogiBurger_CheckedChanged(object sender, EventArgs e)
         {
-            // 나중에 코드를 채워넣어도 되고, 비워두셔도 됩니다.
+            UpdateOrderList();
         }
 
         // 84번줄 외에도 다른 줄에서 비슷한 오류(rdoChickenBurger 등)가 난다면 아래도 추가하세요.
         private void rdoChickenBurger_CheckedChanged(object sender, EventArgs e)
         {
+            UpdateOrderList();
         }
 
         private void chkPotato_CheckedChanged(object sender, EventArgs e)
         {
+            UpdateOrderList();
         }
 
         private void btnOrder_KeyDown(object sender, KeyEventArgs e)
@@ -203,19 +206,21 @@ namespace BurgerKiosk
             // 2. 버거 선택 확인 및 가격 추가
             if (rdoHamBurger.Checked)
             {
-                currentTotal += 5000;
                 lstOrder.Items.Add("햄버거 : 5,000원");
+                currentTotal += 5000;
+
             }
             else if (rdoBulgogiBurger.Checked)
             {
-                currentTotal += 4000;
                 lstOrder.Items.Add("불고기버거 : 4,000원");
+                currentTotal += 4000;
             }
             else if (rdoChickenBurger.Checked)
             {
                 currentTotal += 3000;
                 lstOrder.Items.Add("치킨버거 : 3,000원");
             }
+            lblTotalCost.Text = "총금액: " + currentTotal.ToString("N0") + "원";
 
             // 메뉴가 선택된 경우에만 옵션 계산
             if (currentTotal > 0)
@@ -243,6 +248,7 @@ namespace BurgerKiosk
                     lstOrder.Items.Add("소스 : 500원");
                 }
                 lblTotalCost.Text = "총금액: " + currentTotal.ToString("N0") + "원";
+
             }
             else
             {
