@@ -139,7 +139,7 @@ namespace BurgerKiosk
             rdoHamBurger.TabStop = true;
             lstOrder.Items.Clear(); lblTotalCost.Text = "";
             lblTotalCost.ForeColor = Color.Blue;
-            lblTotalCost.Text = "총 합계 : 000원";
+            lblTotalCost.Text = "총 합계 :";
         }
 
         private void lblTotalCost_Click(object sender, EventArgs e)
