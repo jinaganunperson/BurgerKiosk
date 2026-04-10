@@ -1,6 +1,6 @@
 ﻿namespace BurgerKiosk
 {
-    partial class Form1
+    partial class burger
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(burger));
             rdoHamBurger = new RadioButton();
             rdoBulgogiBurger = new RadioButton();
             rdoChickenBurger = new RadioButton();
@@ -37,7 +37,7 @@
             chkCheese = new CheckBox();
             chkSauce = new CheckBox();
             btnOrder = new Button();
-            this.btnreset = new Button();
+            btnreset = new Button();
             grpoption = new GroupBox();
             grpmenu = new GroupBox();
             pictureBox2 = new PictureBox();
@@ -45,7 +45,7 @@
             grborder = new GroupBox();
             lblTotalCost = new Label();
             lstOrder = new ListBox();
-            label1 = new Label();
+            lblkiosk = new Label();
             pictureBox3 = new PictureBox();
             grpoption.SuspendLayout();
             grpmenu.SuspendLayout();
@@ -168,18 +168,18 @@
             // 
             // btnreset
             // 
-            this.btnreset.BackColor = Color.Red;
-            this.btnreset.Font = new Font("굴림", 13.875F, FontStyle.Bold);
-            this.btnreset.ForeColor = Color.Black;
-            this.btnreset.Location = new Point(989, 607);
-            this.btnreset.Name = "btnreset";
-            this.btnreset.Size = new Size(217, 61);
-            this.btnreset.TabIndex = 5;
-            this.btnreset.Text = "초기화";
-            this.btnreset.UseVisualStyleBackColor = false;
-            this.btnreset.Click += this.button2_Click;
-            this.btnreset.KeyDown += this.button2_KeyDown;
-            this.btnreset.KeyUp += this.button2_KeyUp;
+            btnreset.BackColor = Color.Red;
+            btnreset.Font = new Font("굴림", 13.875F, FontStyle.Bold);
+            btnreset.ForeColor = Color.Black;
+            btnreset.Location = new Point(989, 607);
+            btnreset.Name = "btnreset";
+            btnreset.Size = new Size(217, 61);
+            btnreset.TabIndex = 5;
+            btnreset.Text = "초기화";
+            btnreset.UseVisualStyleBackColor = false;
+            btnreset.Click += button2_Click;
+            btnreset.KeyDown += button2_KeyDown;
+            btnreset.KeyUp += button2_KeyUp;
             // 
             // grpoption
             // 
@@ -269,16 +269,16 @@
             lstOrder.TabIndex = 0;
             lstOrder.TabStop = false;
             // 
-            // label1
+            // lblkiosk
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("맑은 고딕", 28.125F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            label1.ForeColor = Color.Blue;
-            label1.Location = new Point(80, 35);
-            label1.Name = "label1";
-            label1.Size = new Size(694, 100);
-            label1.TabIndex = 0;
-            label1.Text = "버거 주문 키오스크";
+            lblkiosk.AutoSize = true;
+            lblkiosk.Font = new Font("맑은 고딕", 28.125F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            lblkiosk.ForeColor = Color.Blue;
+            lblkiosk.Location = new Point(80, 35);
+            lblkiosk.Name = "lblkiosk";
+            lblkiosk.Size = new Size(694, 100);
+            lblkiosk.TabIndex = 0;
+            lblkiosk.Text = "버거 주문 키오스크";
             // 
             // pictureBox3
             // 
@@ -290,20 +290,20 @@
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
             // 
-            // Form1
+            // burger
             // 
             AutoScaleDimensions = new SizeF(15F, 36F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1292, 734);
             Controls.Add(pictureBox3);
-            Controls.Add(label1);
+            Controls.Add(lblkiosk);
             Controls.Add(grborder);
             Controls.Add(grpmenu);
             Controls.Add(grpoption);
-            Controls.Add(this.btnreset);
+            Controls.Add(btnreset);
             Controls.Add(btnOrder);
             ForeColor = Color.Maroon;
-            Name = "Form1";
+            Name = "burger";
             Text = "Buger Kiosk";
             grpoption.ResumeLayout(false);
             grpoption.PerformLayout();
@@ -332,7 +332,7 @@
         private GroupBox grpoption;
         private GroupBox grpmenu;
         private GroupBox grborder;
-        private Label label1;
+        private Label lblkiosk;
         
         private ListBox lstOrder;
         private PictureBox pictureBox2;

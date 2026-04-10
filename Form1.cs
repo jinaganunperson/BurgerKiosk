@@ -1,9 +1,9 @@
 namespace BurgerKiosk
 {
-    public partial class Form1 : Form
+    public partial class burger : Form
     {
 
-        public Form1()
+        public burger()
         {
             InitializeComponent();
         }
