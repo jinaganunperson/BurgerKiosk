@@ -3,6 +3,9 @@ namespace BurgerKiosk
     public partial class burger : Form
     {
 
+        int waitingNumber = 1;
+
+
         public burger()
         {
             InitializeComponent();
@@ -60,7 +63,7 @@ namespace BurgerKiosk
                     totalCost += 500;
 
                 }
-                
+
             }
             else if (rdoBulgogiBurger.Checked)
             {
@@ -87,7 +90,7 @@ namespace BurgerKiosk
                     totalCost += 500;
 
                 }
-                
+
             }
             else if (rdoChickenBurger.Checked)
             {
@@ -114,10 +117,14 @@ namespace BurgerKiosk
                     totalCost += 500;
 
                 }
-                
+
             }
             lblTotalCost.Text = "총금액: " + totalCost.ToString("N0") + "원";
 
+            MessageBox.Show($"{lblTotalCost.Text}\n주문이 완료되었습니다!\n대기번호: {waitingNumber}번", "주문 접수");
+            waitingNumber++;
+
+            button2_Click(sender, e);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -129,6 +136,7 @@ namespace BurgerKiosk
             chkCola.Checked = false;
             chkCheese.Checked = false;
             chkSauce.Checked = false;
+            rdoHamBurger.TabStop = true;
             lstOrder.Items.Clear(); lblTotalCost.Text = "";
             lblTotalCost.ForeColor = Color.Blue;
             lblTotalCost.Text = "총 합계 : 000원";
@@ -255,6 +263,6 @@ namespace BurgerKiosk
                 lblTotalCost.Text = "메뉴를 선택하세요";
             }
         }
+
     }
-    
 }
