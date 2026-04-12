@@ -47,12 +47,18 @@
             lstOrder = new ListBox();
             lblkiosk = new Label();
             pictureBox3 = new PictureBox();
+            nudHam = new NumericUpDown();
+            nudbul = new NumericUpDown();
+            this.nudchick = new NumericUpDown();
             grpoption.SuspendLayout();
             grpmenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             grborder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudHam).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudbul).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.nudchick).BeginInit();
             SuspendLayout();
             // 
             // rdoHamBurger
@@ -191,13 +197,16 @@
             grpoption.ForeColor = Color.FromArgb(192, 0, 0);
             grpoption.Location = new Point(542, 165);
             grpoption.Name = "grpoption";
-            grpoption.Size = new Size(266, 394);
+            grpoption.Size = new Size(266, 427);
             grpoption.TabIndex = 2;
             grpoption.TabStop = false;
             grpoption.Text = "추가옵션";
             // 
             // grpmenu
             // 
+            grpmenu.Controls.Add(this.nudchick);
+            grpmenu.Controls.Add(nudbul);
+            grpmenu.Controls.Add(nudHam);
             grpmenu.Controls.Add(pictureBox2);
             grpmenu.Controls.Add(pictureBox1);
             grpmenu.Controls.Add(rdoChickenBurger);
@@ -207,7 +216,7 @@
             grpmenu.ForeColor = Color.FromArgb(192, 0, 0);
             grpmenu.Location = new Point(26, 167);
             grpmenu.Name = "grpmenu";
-            grpmenu.Size = new Size(498, 394);
+            grpmenu.Size = new Size(498, 425);
             grpmenu.TabIndex = 1;
             grpmenu.TabStop = false;
             grpmenu.Text = "메뉴선택";
@@ -240,7 +249,7 @@
             grborder.ForeColor = Color.FromArgb(192, 0, 0);
             grborder.Location = new Point(825, 165);
             grborder.Name = "grborder";
-            grborder.Size = new Size(440, 394);
+            grborder.Size = new Size(440, 427);
             grborder.TabIndex = 3;
             grborder.TabStop = false;
             grborder.Text = "주문내역";
@@ -290,6 +299,27 @@
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
             // 
+            // nudHam
+            // 
+            nudHam.Location = new Point(76, 118);
+            nudHam.Name = "nudHam";
+            nudHam.Size = new Size(76, 50);
+            nudHam.TabIndex = 5;
+            // 
+            // nudbul
+            // 
+            nudbul.Location = new Point(76, 235);
+            nudbul.Name = "nudbul";
+            nudbul.Size = new Size(76, 50);
+            nudbul.TabIndex = 6;
+            // 
+            // nudchick
+            // 
+            this.nudchick.Location = new Point(76, 356);
+            this.nudchick.Name = "nudchick";
+            this.nudchick.Size = new Size(76, 50);
+            this.nudchick.TabIndex = 7;
+            // 
             // burger
             // 
             AutoScaleDimensions = new SizeF(15F, 36F);
@@ -314,6 +344,9 @@
             grborder.ResumeLayout(false);
             grborder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudHam).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudbul).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.nudchick).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -339,5 +372,8 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
         private Label lblTotalCost;
+        private NumericUpDown nudchick;
+        private NumericUpDown nudbul;
+        private NumericUpDown nudHam;
     }
 }
