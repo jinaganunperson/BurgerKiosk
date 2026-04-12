@@ -243,11 +243,8 @@ namespace BurgerKiosk
 
             }
 
-            lblTotalCost.Text = "총금액: " + totalCost.ToString("N0") + "원";
-
-
-
-            MessageBox.Show($"{lblTotalCost.Text}\n주문이 완료되었습니다!\n대기번호: {waitingNumber}번", "주문 접수");
+            string finalResult = lblTotalCost.Text;
+            MessageBox.Show($"{finalResult}\n주문이 완료되었습니다!\n대기번호: {waitingNumber}번", "주문 접수");
 
             waitingNumber++;
 
