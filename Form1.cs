@@ -19,6 +19,9 @@ namespace BurgerKiosk
         {
 
             InitializeComponent();
+            nudHam.ValueChanged += (s, e) => UpdateOrderList();
+            nudbul.ValueChanged += (s, e) => UpdateOrderList();
+            nudchick.ValueChanged += (s, e) => UpdateOrderList();
 
         }
 
@@ -421,30 +424,30 @@ namespace BurgerKiosk
             lstOrder.Items.Clear();
             int currentTotal = 0;
 
-            // 1. 버거 선택 확인 및 수량(NumericUpDown) 곱산
+            // 1. 버거 선택 확인 및 수량 반영 계산
             if (rdoHamBurger.Checked)
             {
-                int quantity = (int)nudHam.Value; // 수량 가져오기
-                int price = 5000 * quantity;
-                lstOrder.Items.Add($"햄버거 x {quantity} : {price:N0}원");
+                int qty = (int)nudHam.Value; // 햄버거 수량 파악
+                int price = 5000 * qty;
+                lstOrder.Items.Add($"햄버거 x {qty} : {price:N0}원");
                 currentTotal += price;
             }
             else if (rdoBulgogiBurger.Checked)
             {
-                int quantity = (int)nudbul.Value;
-                int price = 4000 * quantity;
-                lstOrder.Items.Add($"불고기버거 x {quantity} : {price:N0}원");
+                int qty = (int)nudbul.Value; // 불고기버거 수량 파악
+                int price = 4000 * qty;
+                lstOrder.Items.Add($"불고기버거 x {qty} : {price:N0}원");
                 currentTotal += price;
             }
             else if (rdoChickenBurger.Checked)
             {
-                int quantity = (int)nudchick.Value;
-                int price = 3000 * quantity;
-                lstOrder.Items.Add($"치킨버거 x {quantity} : {price:N0}원");
+                int qty = (int)nudchick.Value; // 치킨버거 수량 파악
+                int price = 3000 * qty;
+                lstOrder.Items.Add($"치킨버거 x {qty} : {price:N0}원");
                 currentTotal += price;
             }
 
-            // 2. 옵션 계산 (버거가 선택되었을 때만)
+            // 2. 메뉴가 선택된 경우에만 옵션 계산
             if (currentTotal > 0)
             {
                 lblTotalCost.ForeColor = Color.Blue;
@@ -453,6 +456,7 @@ namespace BurgerKiosk
                 if (chkCheese.Checked) { currentTotal += 1500; lstOrder.Items.Add("치즈 추가 : 1,500원"); }
                 if (chkSauce.Checked) { currentTotal += 500; lstOrder.Items.Add("소스 : 500원"); }
 
+                // 최종 합계를 라벨에 즉시 표시
                 lblTotalCost.Text = "총금액: " + currentTotal.ToString("N0") + "원";
             }
             else
@@ -465,6 +469,20 @@ namespace BurgerKiosk
         private void nudbul_ValueChanged(object sender, EventArgs e) => UpdateOrderList();
         private void nudchick_ValueChanged(object sender, EventArgs e) => UpdateOrderList();
 
+        private void nudHam_ValueChanged_1(object sender, EventArgs e)
+        {
+            UpdateOrderList();
+        }
+
+        private void nudbul_ValueChanged_1(object sender, EventArgs e)
+        {
+            UpdateOrderList();
+        }
+
+        private void nudchick_ValueChanged_1(object sender, EventArgs e)
+        {
+            UpdateOrderList();
+        }
     }
 
 }

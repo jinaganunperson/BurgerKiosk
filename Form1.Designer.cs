@@ -40,6 +40,9 @@
             btnreset = new Button();
             grpoption = new GroupBox();
             grpmenu = new GroupBox();
+            nudchick = new NumericUpDown();
+            nudbul = new NumericUpDown();
+            nudHam = new NumericUpDown();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             grborder = new GroupBox();
@@ -47,18 +50,15 @@
             lstOrder = new ListBox();
             lblkiosk = new Label();
             pictureBox3 = new PictureBox();
-            nudHam = new NumericUpDown();
-            nudbul = new NumericUpDown();
-            this.nudchick = new NumericUpDown();
             grpoption.SuspendLayout();
             grpmenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudchick).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudbul).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudHam).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             grborder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudHam).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nudbul).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.nudchick).BeginInit();
             SuspendLayout();
             // 
             // rdoHamBurger
@@ -204,7 +204,7 @@
             // 
             // grpmenu
             // 
-            grpmenu.Controls.Add(this.nudchick);
+            grpmenu.Controls.Add(nudchick);
             grpmenu.Controls.Add(nudbul);
             grpmenu.Controls.Add(nudHam);
             grpmenu.Controls.Add(pictureBox2);
@@ -220,6 +220,30 @@
             grpmenu.TabIndex = 1;
             grpmenu.TabStop = false;
             grpmenu.Text = "메뉴선택";
+            // 
+            // nudchick
+            // 
+            nudchick.Location = new Point(76, 356);
+            nudchick.Name = "nudchick";
+            nudchick.Size = new Size(76, 50);
+            nudchick.TabIndex = 7;
+            nudchick.ValueChanged += nudchick_ValueChanged_1;
+            // 
+            // nudbul
+            // 
+            nudbul.Location = new Point(76, 235);
+            nudbul.Name = "nudbul";
+            nudbul.Size = new Size(76, 50);
+            nudbul.TabIndex = 6;
+            nudbul.ValueChanged += nudbul_ValueChanged_1;
+            // 
+            // nudHam
+            // 
+            nudHam.Location = new Point(76, 118);
+            nudHam.Name = "nudHam";
+            nudHam.Size = new Size(76, 50);
+            nudHam.TabIndex = 5;
+            nudHam.ValueChanged += nudHam_ValueChanged_1;
             // 
             // pictureBox2
             // 
@@ -299,27 +323,6 @@
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
             // 
-            // nudHam
-            // 
-            nudHam.Location = new Point(76, 118);
-            nudHam.Name = "nudHam";
-            nudHam.Size = new Size(76, 50);
-            nudHam.TabIndex = 5;
-            // 
-            // nudbul
-            // 
-            nudbul.Location = new Point(76, 235);
-            nudbul.Name = "nudbul";
-            nudbul.Size = new Size(76, 50);
-            nudbul.TabIndex = 6;
-            // 
-            // nudchick
-            // 
-            this.nudchick.Location = new Point(76, 356);
-            this.nudchick.Name = "nudchick";
-            this.nudchick.Size = new Size(76, 50);
-            this.nudchick.TabIndex = 7;
-            // 
             // burger
             // 
             AutoScaleDimensions = new SizeF(15F, 36F);
@@ -339,14 +342,14 @@
             grpoption.PerformLayout();
             grpmenu.ResumeLayout(false);
             grpmenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudchick).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudbul).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudHam).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             grborder.ResumeLayout(false);
             grborder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudHam).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nudbul).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.nudchick).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
