@@ -480,6 +480,11 @@ namespace BurgerKiosk
         {
             UpdateOrderList();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblClock.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        }
     }
 
 }

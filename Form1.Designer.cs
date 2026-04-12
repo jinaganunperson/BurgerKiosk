@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(burger));
             rdoHamBurger = new RadioButton();
             rdoBulgogiBurger = new RadioButton();
@@ -50,6 +51,8 @@
             lstOrder = new ListBox();
             lblkiosk = new Label();
             pictureBox3 = new PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(components);
+            lblClock = new Label();
             grpoption.SuspendLayout();
             grpmenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudchick).BeginInit();
@@ -323,11 +326,27 @@
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += this.timer1_Tick;
+            // 
+            // lblClock
+            // 
+            lblClock.AutoSize = true;
+            lblClock.Location = new Point(904, 32);
+            lblClock.Name = "lblClock";
+            lblClock.Size = new Size(85, 36);
+            lblClock.TabIndex = 6;
+            lblClock.Text = "label1";
+            // 
             // burger
             // 
             AutoScaleDimensions = new SizeF(15F, 36F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1292, 734);
+            Controls.Add(lblClock);
             Controls.Add(pictureBox3);
             Controls.Add(lblkiosk);
             Controls.Add(grborder);
@@ -378,5 +397,8 @@
         private NumericUpDown nudchick;
         private NumericUpDown nudbul;
         private NumericUpDown nudHam;
+        private System.Windows.Forms.Timer Timer;
+        private Label lblClock;
+        private System.Windows.Forms.Timer timer1;
     }
 }
