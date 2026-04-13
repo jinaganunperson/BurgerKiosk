@@ -460,6 +460,8 @@ namespace BurgerKiosk
             {
                 lblTotalCost.Text = "메뉴를 선택하세요";
             }
+
+            timeLeft = 100;
         }
 
         private void nudHam_ValueChanged(object sender, EventArgs e) => UpdateOrderList();
@@ -484,6 +486,30 @@ namespace BurgerKiosk
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblClock.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        }
+
+        int timeLeft = 100;
+
+        private void timerLimit_Tick(object sender, EventArgs e)
+        {
+            if (timeLeft > 0)
+            {
+                timeLeft--;
+                lblTimer.Text = $"남은 시간: {timeLeft}초"; // 시간 표시용 라벨
+
+                // 10초 남았을 때 빨간색으로 경고
+                if (timeLeft <= 10) lblTimer.ForeColor = Color.Red;
+                else lblTimer.ForeColor = Color.Black;
+            }
+            else
+            {
+                // 0초가 되면 실행될 로직
+                timerLimit.Stop(); // 잠시 멈춤
+                MessageBox.Show("주문 시간이 초과되었습니다. 처음부터 다시 시작해주세요.", "시간 초과");
+                button2_Click(sender, e); // 모든 선택 초기화
+                timeLeft = 100; // 시간 리셋
+                timerLimit.Start(); // 다시 시작
+            }
         }
     }
 

@@ -51,8 +51,10 @@
             lstOrder = new ListBox();
             lblkiosk = new Label();
             pictureBox3 = new PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(components);
+            timer1 = new System.Windows.Forms.Timer(components);
             lblClock = new Label();
+            timerLimit = new System.Windows.Forms.Timer(components);
+            lblTimer = new Label();
             grpoption.SuspendLayout();
             grpmenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudchick).BeginInit();
@@ -328,9 +330,9 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += this.timer1_Tick;
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // lblClock
             // 
@@ -341,11 +343,27 @@
             lblClock.TabIndex = 6;
             lblClock.Text = "label1";
             // 
+            // timerLimit
+            // 
+            timerLimit.Enabled = true;
+            timerLimit.Interval = 1000;
+            timerLimit.Tick += timerLimit_Tick;
+            // 
+            // lblTimer
+            // 
+            lblTimer.AutoSize = true;
+            lblTimer.Location = new Point(909, 91);
+            lblTimer.Name = "lblTimer";
+            lblTimer.Size = new Size(85, 36);
+            lblTimer.TabIndex = 7;
+            lblTimer.Text = "label1";
+            // 
             // burger
             // 
             AutoScaleDimensions = new SizeF(15F, 36F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1292, 734);
+            Controls.Add(lblTimer);
             Controls.Add(lblClock);
             Controls.Add(pictureBox3);
             Controls.Add(lblkiosk);
@@ -400,5 +418,7 @@
         private System.Windows.Forms.Timer Timer;
         private Label lblClock;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerLimit;
+        private Label lblTimer;
     }
 }
