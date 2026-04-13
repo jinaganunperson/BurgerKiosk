@@ -337,11 +337,11 @@
             // lblClock
             // 
             lblClock.AutoSize = true;
-            lblClock.Location = new Point(904, 32);
+            lblClock.Location = new Point(1005, -5);
             lblClock.Name = "lblClock";
-            lblClock.Size = new Size(85, 36);
+            lblClock.Size = new Size(169, 36);
             lblClock.TabIndex = 6;
-            lblClock.Text = "label1";
+            lblClock.Text = "실시간 시간 :";
             // 
             // timerLimit
             // 
@@ -352,11 +352,13 @@
             // lblTimer
             // 
             lblTimer.AutoSize = true;
-            lblTimer.Location = new Point(909, 91);
+            lblTimer.Font = new Font("휴먼둥근헤드라인", 24F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            lblTimer.Location = new Point(1092, 48);
             lblTimer.Name = "lblTimer";
-            lblTimer.Size = new Size(85, 36);
+            lblTimer.Size = new Size(167, 67);
             lblTimer.TabIndex = 7;
-            lblTimer.Text = "label1";
+            lblTimer.Text = "100";
+            lblTimer.Click += lblTimer_Click;
             // 
             // burger
             // 

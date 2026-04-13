@@ -495,7 +495,7 @@ namespace BurgerKiosk
             if (timeLeft > 0)
             {
                 timeLeft--;
-                lblTimer.Text = $"남은 시간: {timeLeft}초"; // 시간 표시용 라벨
+                lblTimer.Text = $"{timeLeft}초"; // 시간 표시용 라벨
 
                 // 10초 남았을 때 빨간색으로 경고
                 if (timeLeft <= 10) lblTimer.ForeColor = Color.Red;
@@ -510,6 +510,11 @@ namespace BurgerKiosk
                 timeLeft = 100; // 시간 리셋
                 timerLimit.Start(); // 다시 시작
             }
+        }
+
+        private void lblTimer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
