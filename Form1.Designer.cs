@@ -43,7 +43,7 @@
             this.nudSauce = new NumericUpDown();
             this.nudCheese = new NumericUpDown();
             this.nudCola = new NumericUpDown();
-            nudPotato = new NumericUpDown();
+            this.nudPotato = new NumericUpDown();
             grpmenu = new GroupBox();
             nudchick = new NumericUpDown();
             nudbul = new NumericUpDown();
@@ -475,14 +475,13 @@
         private NumericUpDown nudchick;
         private NumericUpDown nudbul;
         private NumericUpDown nudHam;
-        private System.Windows.Forms.Timer Timer;
         private Label lblClock;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timerLimit;
         private Label lblTimer;
-        private NumericUpDown numericUpDown4;
-        private NumericUpDown numericUpDown3;
-        private NumericUpDown numericUpDown2;
-        private NumericUpDown nudPotato;
+        private System.Windows.Forms.NumericUpDown nudSauce;
+        private System.Windows.Forms.NumericUpDown nudCheese;
+        private System.Windows.Forms.NumericUpDown nudCola;
+        private System.Windows.Forms.NumericUpDown nudPotato;
     }
 }

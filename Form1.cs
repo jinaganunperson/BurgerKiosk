@@ -23,6 +23,10 @@ namespace BurgerKiosk
             nudbul.ValueChanged += (s, e) => UpdateOrderList();
             nudchick.ValueChanged += (s, e) => UpdateOrderList();
 
+            nudPotato.ValueChanged += (s, e) => UpdateOrderList();
+            nudCola.ValueChanged += (s, e) => UpdateOrderList();
+            nudCheese.ValueChanged += (s, e) => UpdateOrderList();
+            nudSauce.ValueChanged += (s, e) => UpdateOrderList();
         }
 
 
@@ -279,6 +283,10 @@ namespace BurgerKiosk
             nudHam.Value = 1;
             nudbul.Value = 1;
             nudchick.Value = 1;
+            nudPotato.Value = 1; 
+            nudCola.Value = 1; 
+            nudCheese.Value = 1; 
+            nudSauce.Value = 1;
 
             lstOrder.Items.Clear(); lblTotalCost.Text = "";
 
@@ -421,39 +429,67 @@ namespace BurgerKiosk
             lstOrder.Items.Clear();
             int currentTotal = 0;
 
-            // 1. 버거 선택 확인 및 수량 반영 계산
+            // 1. 버거 계산 (기존 코드 유지)
             if (rdoHamBurger.Checked)
             {
-                int qty = (int)nudHam.Value; // 햄버거 수량 파악
+                int qty = (int)nudHam.Value;
                 int price = 5000 * qty;
                 lstOrder.Items.Add($"햄버거 x {qty} : {price:N0}원");
                 currentTotal += price;
             }
             else if (rdoBulgogiBurger.Checked)
             {
-                int qty = (int)nudbul.Value; // 불고기버거 수량 파악
+                int qty = (int)nudbul.Value;
                 int price = 4000 * qty;
                 lstOrder.Items.Add($"불고기버거 x {qty} : {price:N0}원");
                 currentTotal += price;
             }
             else if (rdoChickenBurger.Checked)
             {
-                int qty = (int)nudchick.Value; // 치킨버거 수량 파악
+                int qty = (int)nudchick.Value;
                 int price = 3000 * qty;
                 lstOrder.Items.Add($"치킨버거 x {qty} : {price:N0}원");
                 currentTotal += price;
             }
 
-            // 2. 메뉴가 선택된 경우에만 옵션 계산
+            // 2. 추가 옵션 계산 (수량 반영)
             if (currentTotal > 0)
             {
                 lblTotalCost.ForeColor = Color.Blue;
-                if (chkPotato.Checked) { currentTotal += 3500; lstOrder.Items.Add("감자튀김 : 3,500원"); }
-                if (chkCola.Checked) { currentTotal += 2500; lstOrder.Items.Add("콜라 추가 : 2,500원"); }
-                if (chkCheese.Checked) { currentTotal += 1500; lstOrder.Items.Add("치즈 추가 : 1,500원"); }
-                if (chkSauce.Checked) { currentTotal += 500; lstOrder.Items.Add("소스 : 500원"); }
 
-                // 최종 합계를 라벨에 즉시 표시
+                // 감자튀김
+                if (chkPotato.Checked)
+                {
+                    int qty = (int)nudPotato.Value;
+                    int price = 3500 * qty;
+                    lstOrder.Items.Add($"감자튀김 x {qty} : {price:N0}원");
+                    currentTotal += price;
+                }
+                // 콜라
+                if (chkCola.Checked)
+                {
+                    int qty = (int)nudCola.Value;
+                    int price = 2500 * qty;
+                    lstOrder.Items.Add($"콜라 x {qty} : {price:N0}원");
+                    currentTotal += price;
+                }
+                // 치즈
+                if (chkCheese.Checked)
+                {
+                    int qty = (int)nudCheese.Value;
+                    int price = 1500 * qty;
+                    lstOrder.Items.Add($"치즈 추가 x {qty} : {price:N0}원");
+                    currentTotal += price;
+                }
+                // 소스
+                if (chkSauce.Checked)
+                {
+                    int qty = (int)nudSauce.Value;
+                    int price = 500 * qty;
+                    lstOrder.Items.Add($"소스 x {qty} : {price:N0}원");
+                    currentTotal += price;
+                }
+
                 lblTotalCost.Text = "총금액: " + currentTotal.ToString("N0") + "원";
             }
             else
@@ -461,6 +497,7 @@ namespace BurgerKiosk
                 lblTotalCost.Text = "메뉴를 선택하세요";
             }
 
+            // 조작 시 제한 시간 리셋
             timeLeft = 100;
         }
 
