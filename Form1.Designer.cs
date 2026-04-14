@@ -40,6 +40,10 @@
             btnOrder = new Button();
             btnreset = new Button();
             grpoption = new GroupBox();
+            this.nudSauce = new NumericUpDown();
+            this.nudCheese = new NumericUpDown();
+            this.nudCola = new NumericUpDown();
+            nudPotato = new NumericUpDown();
             grpmenu = new GroupBox();
             nudchick = new NumericUpDown();
             nudbul = new NumericUpDown();
@@ -56,6 +60,10 @@
             timerLimit = new System.Windows.Forms.Timer(components);
             lblTimer = new Label();
             grpoption.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)this.nudSauce).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.nudCheese).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)this.nudCola).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudPotato).BeginInit();
             grpmenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudchick).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudbul).BeginInit();
@@ -111,7 +119,7 @@
             chkPotato.AutoSize = true;
             chkPotato.Font = new Font("굴림", 13.875F, FontStyle.Bold);
             chkPotato.ForeColor = Color.Maroon;
-            chkPotato.Location = new Point(24, 56);
+            chkPotato.Location = new Point(24, 49);
             chkPotato.Name = "chkPotato";
             chkPotato.Size = new Size(201, 41);
             chkPotato.TabIndex = 3;
@@ -125,7 +133,7 @@
             chkCola.BackColor = SystemColors.Control;
             chkCola.Font = new Font("굴림", 13.875F, FontStyle.Bold);
             chkCola.ForeColor = Color.Maroon;
-            chkCola.Location = new Point(24, 135);
+            chkCola.Location = new Point(24, 142);
             chkCola.Name = "chkCola";
             chkCola.Size = new Size(125, 41);
             chkCola.TabIndex = 4;
@@ -139,7 +147,7 @@
             chkCheese.AutoSize = true;
             chkCheese.Font = new Font("굴림", 13.875F, FontStyle.Bold);
             chkCheese.ForeColor = Color.Maroon;
-            chkCheese.Location = new Point(24, 232);
+            chkCheese.Location = new Point(24, 239);
             chkCheese.Name = "chkCheese";
             chkCheese.Size = new Size(201, 41);
             chkCheese.TabIndex = 5;
@@ -153,7 +161,7 @@
             chkSauce.AutoSize = true;
             chkSauce.Font = new Font("굴림", 13.875F, FontStyle.Bold);
             chkSauce.ForeColor = Color.Maroon;
-            chkSauce.Location = new Point(24, 325);
+            chkSauce.Location = new Point(24, 332);
             chkSauce.Name = "chkSauce";
             chkSauce.Size = new Size(201, 41);
             chkSauce.TabIndex = 6;
@@ -194,6 +202,10 @@
             // 
             // grpoption
             // 
+            grpoption.Controls.Add(this.nudSauce);
+            grpoption.Controls.Add(this.nudCheese);
+            grpoption.Controls.Add(this.nudCola);
+            grpoption.Controls.Add(nudPotato);
             grpoption.Controls.Add(chkSauce);
             grpoption.Controls.Add(chkCheese);
             grpoption.Controls.Add(chkCola);
@@ -206,6 +218,42 @@
             grpoption.TabIndex = 2;
             grpoption.TabStop = false;
             grpoption.Text = "추가옵션";
+            // 
+            // nudSauce
+            // 
+            this.nudSauce.Location = new Point(56, 374);
+            this.nudSauce.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.nudSauce.Name = "nudSauce";
+            this.nudSauce.Size = new Size(71, 50);
+            this.nudSauce.TabIndex = 10;
+            this.nudSauce.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // nudCheese
+            // 
+            this.nudCheese.Location = new Point(56, 281);
+            this.nudCheese.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.nudCheese.Name = "nudCheese";
+            this.nudCheese.Size = new Size(71, 50);
+            this.nudCheese.TabIndex = 9;
+            this.nudCheese.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // nudCola
+            // 
+            this.nudCola.Location = new Point(56, 183);
+            this.nudCola.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            this.nudCola.Name = "nudCola";
+            this.nudCola.Size = new Size(71, 50);
+            this.nudCola.TabIndex = 8;
+            this.nudCola.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // nudPotato
+            // 
+            nudPotato.Location = new Point(56, 90);
+            nudPotato.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudPotato.Name = "nudPotato";
+            nudPotato.Size = new Size(71, 50);
+            nudPotato.TabIndex = 7;
+            nudPotato.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // grpmenu
             // 
@@ -229,25 +277,31 @@
             // nudchick
             // 
             nudchick.Location = new Point(76, 356);
+            nudchick.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudchick.Name = "nudchick";
             nudchick.Size = new Size(76, 50);
             nudchick.TabIndex = 7;
+            nudchick.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudchick.ValueChanged += nudchick_ValueChanged_1;
             // 
             // nudbul
             // 
             nudbul.Location = new Point(76, 235);
+            nudbul.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudbul.Name = "nudbul";
             nudbul.Size = new Size(76, 50);
             nudbul.TabIndex = 6;
+            nudbul.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudbul.ValueChanged += nudbul_ValueChanged_1;
             // 
             // nudHam
             // 
             nudHam.Location = new Point(76, 118);
+            nudHam.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudHam.Name = "nudHam";
             nudHam.Size = new Size(76, 50);
             nudHam.TabIndex = 5;
+            nudHam.Value = new decimal(new int[] { 1, 0, 0, 0 });
             nudHam.ValueChanged += nudHam_ValueChanged_1;
             // 
             // pictureBox2
@@ -379,6 +433,10 @@
             Text = "Buger Kiosk";
             grpoption.ResumeLayout(false);
             grpoption.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)this.nudSauce).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.nudCheese).EndInit();
+            ((System.ComponentModel.ISupportInitialize)this.nudCola).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudPotato).EndInit();
             grpmenu.ResumeLayout(false);
             grpmenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nudchick).EndInit();
@@ -422,5 +480,9 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timerLimit;
         private Label lblTimer;
+        private NumericUpDown numericUpDown4;
+        private NumericUpDown numericUpDown3;
+        private NumericUpDown numericUpDown2;
+        private NumericUpDown nudPotato;
     }
 }
