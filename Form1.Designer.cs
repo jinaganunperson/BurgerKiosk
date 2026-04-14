@@ -40,10 +40,10 @@
             btnOrder = new Button();
             btnreset = new Button();
             grpoption = new GroupBox();
-            this.nudSauce = new NumericUpDown();
-            this.nudCheese = new NumericUpDown();
-            this.nudCola = new NumericUpDown();
-            this.nudPotato = new NumericUpDown();
+            nudSauce = new NumericUpDown();
+            nudCheese = new NumericUpDown();
+            nudCola = new NumericUpDown();
+            nudPotato = new NumericUpDown();
             grpmenu = new GroupBox();
             nudchick = new NumericUpDown();
             nudbul = new NumericUpDown();
@@ -59,10 +59,11 @@
             lblClock = new Label();
             timerLimit = new System.Windows.Forms.Timer(components);
             lblTimer = new Label();
+            lblset = new Label();
             grpoption.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudSauce).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.nudCheese).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)this.nudCola).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudSauce).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudCheese).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudCola).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nudPotato).BeginInit();
             grpmenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudchick).BeginInit();
@@ -202,9 +203,9 @@
             // 
             // grpoption
             // 
-            grpoption.Controls.Add(this.nudSauce);
-            grpoption.Controls.Add(this.nudCheese);
-            grpoption.Controls.Add(this.nudCola);
+            grpoption.Controls.Add(nudSauce);
+            grpoption.Controls.Add(nudCheese);
+            grpoption.Controls.Add(nudCola);
             grpoption.Controls.Add(nudPotato);
             grpoption.Controls.Add(chkSauce);
             grpoption.Controls.Add(chkCheese);
@@ -221,30 +222,30 @@
             // 
             // nudSauce
             // 
-            this.nudSauce.Location = new Point(56, 374);
-            this.nudSauce.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            this.nudSauce.Name = "nudSauce";
-            this.nudSauce.Size = new Size(71, 50);
-            this.nudSauce.TabIndex = 10;
-            this.nudSauce.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            nudSauce.Location = new Point(56, 374);
+            nudSauce.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudSauce.Name = "nudSauce";
+            nudSauce.Size = new Size(71, 50);
+            nudSauce.TabIndex = 10;
+            nudSauce.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // nudCheese
             // 
-            this.nudCheese.Location = new Point(56, 281);
-            this.nudCheese.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            this.nudCheese.Name = "nudCheese";
-            this.nudCheese.Size = new Size(71, 50);
-            this.nudCheese.TabIndex = 9;
-            this.nudCheese.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            nudCheese.Location = new Point(56, 281);
+            nudCheese.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudCheese.Name = "nudCheese";
+            nudCheese.Size = new Size(71, 50);
+            nudCheese.TabIndex = 9;
+            nudCheese.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // nudCola
             // 
-            this.nudCola.Location = new Point(56, 183);
-            this.nudCola.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            this.nudCola.Name = "nudCola";
-            this.nudCola.Size = new Size(71, 50);
-            this.nudCola.TabIndex = 8;
-            this.nudCola.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            nudCola.Location = new Point(56, 183);
+            nudCola.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudCola.Name = "nudCola";
+            nudCola.Size = new Size(71, 50);
+            nudCola.TabIndex = 8;
+            nudCola.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // nudPotato
             // 
@@ -414,11 +415,21 @@
             lblTimer.Text = "100";
             lblTimer.Click += lblTimer_Click;
             // 
+            // lblset
+            // 
+            lblset.AutoSize = true;
+            lblset.Location = new Point(122, 607);
+            lblset.Name = "lblset";
+            lblset.Size = new Size(521, 36);
+            lblset.TabIndex = 8;
+            lblset.Text = "세트할인(-1,000) : 버거 + 콜라 + 감자튀김 ";
+            // 
             // burger
             // 
             AutoScaleDimensions = new SizeF(15F, 36F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1292, 734);
+            Controls.Add(lblset);
             Controls.Add(lblTimer);
             Controls.Add(lblClock);
             Controls.Add(pictureBox3);
@@ -433,9 +444,9 @@
             Text = "Buger Kiosk";
             grpoption.ResumeLayout(false);
             grpoption.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)this.nudSauce).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.nudCheese).EndInit();
-            ((System.ComponentModel.ISupportInitialize)this.nudCola).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudSauce).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudCheese).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudCola).EndInit();
             ((System.ComponentModel.ISupportInitialize)nudPotato).EndInit();
             grpmenu.ResumeLayout(false);
             grpmenu.PerformLayout();
@@ -483,5 +494,6 @@
         private System.Windows.Forms.NumericUpDown nudCheese;
         private System.Windows.Forms.NumericUpDown nudCola;
         private System.Windows.Forms.NumericUpDown nudPotato;
+        private Label lblset;
     }
 }

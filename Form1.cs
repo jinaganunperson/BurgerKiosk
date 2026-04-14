@@ -490,6 +490,18 @@ namespace BurgerKiosk
                     currentTotal += price;
                 }
 
+                bool isBurgerSelected = rdoHamBurger.Checked || rdoBulgogiBurger.Checked || rdoChickenBurger.Checked;
+
+                if (isBurgerSelected && chkPotato.Checked && chkCola.Checked)
+                {
+                    // 1. 합계에서 1000원 차감
+                    currentTotal -= 1000;
+
+                    // 2. 리스트박스에 할인 문구 추가
+                    lstOrder.Items.Add("세트 할인 : -1,000원");
+                }
+
+                // 최종 합계 출력 (이미 차감된 currentTotal이 반영됨)
                 lblTotalCost.Text = "총금액: " + currentTotal.ToString("N0") + "원";
             }
             else
