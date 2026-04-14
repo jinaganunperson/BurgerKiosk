@@ -490,15 +490,30 @@ namespace BurgerKiosk
                     currentTotal += price;
                 }
 
-                bool isBurgerSelected = rdoHamBurger.Checked || rdoBulgogiBurger.Checked || rdoChickenBurger.Checked;
-
-                if (isBurgerSelected && chkPotato.Checked && chkCola.Checked)
+                if (chkPotato.Checked && chkCola.Checked)
                 {
-                    // 1. 합계에서 1000원 차감
-                    currentTotal -= 1000;
+                    // 1. 현재 선택된 버거의 수량 파악
+                    int burgerQty = 0;
+                    if (rdoHamBurger.Checked) burgerQty = (int)nudHam.Value;
+                    else if (rdoBulgogiBurger.Checked) burgerQty = (int)nudbul.Value;
+                    else if (rdoChickenBurger.Checked) burgerQty = (int)nudchick.Value;
 
-                    // 2. 리스트박스에 할인 문구 추가
-                    lstOrder.Items.Add("세트 할인 : -1,000원");
+                    // 2. 버거, 감자튀김, 콜라의 수량 가져오기
+                    int potatoQty = (int)nudPotato.Value;
+                    int colaQty = (int)nudCola.Value;
+
+                    // 3. 세 가지 중 가장 작은 값이 '완성된 세트의 개수'입니다.
+                    // Math.Min을 중첩해서 세 값 중 최소값을 찾습니다.
+                    int setQuantity = Math.Min(burgerQty, Math.Min(potatoQty, colaQty));
+
+                    // 4. 세트가 1개 이상일 때만 할인 적용
+                    if (setQuantity > 0)
+                    {
+                        int totalDiscount = setQuantity * 1000; // 세트당 1,000원 할인
+                        currentTotal -= totalDiscount;
+
+                        lstOrder.Items.Add($"세트 할인 X {setQuantity} : -{totalDiscount:N0}원");
+                    }
                 }
 
                 // 최종 합계 출력 (이미 차감된 currentTotal이 반영됨)
